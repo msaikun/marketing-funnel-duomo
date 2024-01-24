@@ -1,0 +1,14 @@
+@import '../../../../styles/variables.scss';
+
+.description {
+  text-align: center;
+  font-size: 10px;
+  line-height: $space-lg;
+  color: #778191;
+  margin-top: $space-lg;
+
+  .link {
+    color: $primary-text-color;
+    font-weight: $default-font-weight;
+  }
+}

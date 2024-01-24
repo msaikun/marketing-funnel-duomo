@@ -1,0 +1,43 @@
+@import '../../../../styles/placeholders.scss';
+@import '../../../../styles/variables.scss';
+
+.wrapper {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: $space-sm;
+  }
+
+  .review {
+    padding: $space-md;
+
+    &:not(:last-child) {
+      @extend %list-item;
+    }
+
+    .reviewInfo {
+      display: flex;
+      justify-content: space-between;
+
+      .userInfo {
+        display: flex;
+        flex-direction: column;
+
+        .user {
+          font-weight: 700;
+        }
+
+        .date {
+          font-size: 12px;
+          line-height: 16px;
+          color: #00000078;
+        }
+      }
+    }
+
+    .comment {
+      margin-top: $space-sm;
+      line-height: 20px;
+    }
+  }
+}

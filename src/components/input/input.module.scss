@@ -1,0 +1,39 @@
+@import '../../../styles/variables.scss';
+
+.field {
+  width: 100%;
+  position: relative;
+  padding: 28px $space-md $space-sm;
+  font-size: 18px;
+  font-weight: $default-font-weight;
+  line-height: 24px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+
+  .label {
+    position: absolute;
+    top: $space-sm;
+    left: $space-md;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: $primary-button-color;
+  }
+
+  .errorMessage {
+    font-size: 12px;
+    font-weight: $default-font-weight;
+    line-height: 24px;
+    color: $red-color;
+  }
+}
+
+.fieldWithError {
+  border: 2px solid $red-color;
+  background-color: $white-color;
+}
+
+.disabledField {
+  background-color: $white-color;
+}

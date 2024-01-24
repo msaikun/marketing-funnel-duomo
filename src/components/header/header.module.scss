@@ -1,0 +1,37 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/placeholders.scss";
+
+.nav {
+  @extend %flex-box;
+  justify-content: space-between;
+  height: 40px;
+
+  // max-width: $page-container;
+  // margin: 0 auto;
+  @include colors;
+  @include onDesktop {
+    padding: 36px 40px;
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .arrow {
+    @extend %flex-box;
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius;
+
+    &:active {
+      background-color: $background-color;
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+  }
+}

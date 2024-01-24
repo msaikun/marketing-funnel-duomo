@@ -1,0 +1,20 @@
+.option {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #DFE5EF;
+  }
+
+  .progressIndicator {
+    padding-left: 12px;
+  }
+
+  .text {
+    padding: 12px;
+  }
+}
+
+.progressBar {
+  margin: 24px 0;
+}

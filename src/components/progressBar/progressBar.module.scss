@@ -1,0 +1,18 @@
+@import '../../../styles/mixins.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .svg {
+    .circle {
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .text {
+      @include percentageStyle(40px);
+    }
+  }
+}

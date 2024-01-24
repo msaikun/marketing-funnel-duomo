@@ -1,0 +1,24 @@
+@import '../../../../styles/placeholders.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.result {
+  display: flex;
+  padding: $space-md;
+
+  &:not(:last-child) {
+    @extend %list-item;
+  }
+
+  .percentage {
+    padding-left: $space-md;
+    @include percentageStyle();
+  }
+
+  .text {
+    @extend %flex-box;
+    padding-left: $space-md;
+    justify-content: start;
+    font-weight: 600;
+  }
+}

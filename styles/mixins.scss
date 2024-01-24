@@ -1,0 +1,29 @@
+@mixin onTablet {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin borderRadius($leftRadius, $rightRadius) {
+  border-top-left-radius: $leftRadius;
+  border-top-right-radius: $rightRadius;
+}
+
+@mixin colors($backgroundColor: $white-color, $color: $primary-text-color) {
+  background-color: $backgroundColor;
+  color: $color;
+}
+
+@mixin percentageStyle($fontSize: 32px) {
+  text-align: center;
+  font-size: $fontSize;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px;
+}

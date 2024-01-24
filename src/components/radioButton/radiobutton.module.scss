@@ -1,0 +1,74 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/placeholders.scss';
+@import '../../../styles/mixins.scss';
+
+.wrapper {
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .mostPopularPlanLabel {
+    @extend %flex-box;
+    @include borderRadius($border-radius, $border-radius);
+    text-transform: uppercase;
+    height: 24px;
+    background-color: $primary-text-color;
+    color: $white-color;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  .mostPopularCheckedPlanLabel {
+    border: 2px solid $primary-button-color;
+    background-color: $primary-button-color;
+  }
+
+  .plan {
+    @extend %flex-box;
+    justify-content: space-between;
+    padding: 16px 16px 16px 2px;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    border: 2px solid $white-color;
+
+    .name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .details {
+      display: flex;
+      padding: 8px 12px;
+      background-color: #e1e9f4;
+      color: $primary-text-color;
+      border-radius: 4px;
+
+      .currency {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+
+      .price {
+        font-size: 48px;
+        line-height: 40px;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .mostPopularPlan {
+    @include borderRadius(0, 0);
+  }
+
+  .mostPopularCheckedPlan {
+    border: 2px solid $primary-button-color;
+    // background-color: $primary-button-color;
+  }
+
+  // .selectedOption {}
+}

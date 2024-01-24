@@ -1,0 +1,15 @@
+@import "../../../styles/mixins.scss";
+
+.growth {
+  margin: 24px 0 54px;
+}
+
+.button {
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+
+  @include onTablet {
+    position: static;
+  }
+}
