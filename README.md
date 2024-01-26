@@ -1,4 +1,4 @@
-# DOUMO Landing Page
+# DUOMO Landing Page
 Landing page with a 3-slide-mini-quiz
 
 # Run App using Docker
