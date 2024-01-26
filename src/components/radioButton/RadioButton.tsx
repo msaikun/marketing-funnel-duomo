@@ -1,5 +1,5 @@
 import classNames          from 'classnames';
-import styles              from './radiobutton.module.scss';
+import styles              from './radioButton.module.scss';
 import { plusJakartaSans } from '../../../styles/fonts';
 
 export interface IRadioButtonOption {
