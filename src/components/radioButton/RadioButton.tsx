@@ -1,18 +1,18 @@
-import classNames from 'classnames';
-import styles from './radiobutton.module.scss';
+import classNames          from 'classnames';
+import styles              from './radiobutton.module.scss';
 import { plusJakartaSans } from '../../../styles/fonts';
 
 export interface IRadioButtonOption {
-  id: number;
-  title: string;
-  price: number;
-  isTheMostPopular?: boolean;
+  id                : number;
+  title             : string;
+  price             : number;
+  isTheMostPopular? : boolean;
 }
 
 interface IRadioButton {
-  value: IRadioButtonOption;
-  selectedOption: IRadioButtonOption | null;
-  onChange: (value: IRadioButtonOption) => void;
+  value          : IRadioButtonOption;
+  selectedOption : IRadioButtonOption | null;
+  onChange       : (value: IRadioButtonOption) => void;
 }
 
 export const ReadioButton = ({
@@ -22,7 +22,6 @@ export const ReadioButton = ({
 }: IRadioButton) => {
   const isChecked = selectedOption?.id === value.id;
 
-  console.log('isChecked', isChecked);
   return (
     <div className={classNames(styles.wrapper, plusJakartaSans.className)}>
       {value.isTheMostPopular && (
@@ -30,25 +29,26 @@ export const ReadioButton = ({
           Most popular
         </div>
       )}
+
       <label className={styles.inputWrapper}>
         <div className={classNames(styles.radioButton, {
-          [styles.mostPopularPlan]: value.isTheMostPopular,
-          [styles.mostPopularCheckedPlan]: isChecked,
+          [styles.mostPopularPlan]        : value.isTheMostPopular,
+          [styles.mostPopularCheckedPlan] : isChecked,
         })}>
           <input
-            name={value.title}
-            type="radio"
-            checked={isChecked}
-            value={value.id}
-            id={value.id.toString()}
-            className={classNames({ [styles.checkedInput]: isChecked })}
-            onChange={() => onChange(value)}
+            name      = {value.title}
+            type      = "radio"
+            checked   = {isChecked}
+            value     = {value.id}
+            id        = {value.id.toString()}
+            className = {classNames({ [styles.checkedInput]: isChecked })}
+            onChange  = {() => onChange(value)}
           />
-          <span className={classNames(styles.control, {
-            [styles.checkedControl]: isChecked
-          })}></span>
+
+          <span className={classNames(styles.control, {[styles.checkedControl]: isChecked })}></span>
 
           <div className={styles.name}>{value.title}</div>
+
           <div className={styles.details}>
             <span className={styles.currency}>$</span>
             <span className={styles.price}>{value.price}</span>

@@ -32,21 +32,25 @@ export const Input = ({
   return (
     <div className={styles.wrapper}>
       <input
-        name     = {name}
-        type     = {type}
-        required = {required}
-        disabled = {disabled}
-        value    = {value}
-        className={classNames(styles.field, {
+        name      = {name}
+        type      = {type}
+        required  = {required}
+        disabled  = {disabled}
+        value     = {value}
+        className ={classNames(styles.field, {
           [styles.fieldWithError]: withError,
           [styles.disabledField]: disabled
         })}
-        onChange = {(e) => onChange(e.target.value)}
-        onBlur   = {onBlur}
+        onChange  = {(e) => onChange(e.target.value)}
+        onBlur    = {onBlur}
       />
+
       {withError && <div className={styles.errorMessage}>{error}</div>}
 
-      <label htmlFor="name" className={classNames(styles.label, { [styles.disabledLabel]: disabled })}>
+      <label
+        htmlFor   = {name}
+        className = {classNames(styles.label, { [styles.disabledLabel]: disabled })}
+      >
         {label}
       </label>
     </div>

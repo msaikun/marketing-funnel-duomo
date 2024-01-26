@@ -1,31 +1,31 @@
 .option {
-  display: flex;
-  align-items: center;
+  display     : flex;
+  align-items : center;
 
   &:not(:last-child) {
     border-bottom: 1px solid #DFE5EF;
   }
 
   .progressIndicator {
-    padding-left: 12px;
-    position: relative;
+    padding-left : $space-md;
+    position     : relative;
 
     .progressBar {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      top: 8px;
+      position : relative;
+      width    : $space-xl;
+      height   : $space-xl;
+      top      : $space-sm;
     }
   }
 
   .text {
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+    padding     : $space-md;
+    font-size   : 16px;
+    font-weight : 500;
+    line-height : 24px;
   }
 }
 
 .progressBar {
-  margin: 8px 0 24px;
+  margin: $space-sm 0 $space-xl;
 }

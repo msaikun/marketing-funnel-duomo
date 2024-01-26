@@ -3,23 +3,23 @@
 @import '../../../../styles/mixins.scss';
 
 .result {
-  display: flex;
-  padding: $space-md;
+  display : flex;
+  padding : $space-md;
 
   &:not(:last-child) {
     @extend %list-item;
   }
 
   .percentage {
-    padding-left: $space-md;
-    line-height: 40px;
     @include percentageStyle();
+    padding-left : $space-md;
+    line-height  : 40px;
   }
 
   .text {
     @extend %flex-box;
-    padding-left: $space-md;
-    justify-content: start;
-    font-weight: 600;
+    justify-content : start;
+    padding-left    : $space-md;
+    font-weight     : 600;
   }
 }

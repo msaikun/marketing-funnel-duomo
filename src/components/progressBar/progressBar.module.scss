@@ -1,14 +1,13 @@
 @import '../../../styles/mixins.scss';
+@import '../../../styles/placeholders.scss';
 
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-box;
 
   .svg {
     .circle {
-      fill: none;
-      stroke-linecap: round;
+      fill           : none;
+      stroke-linecap : round;
     }
 
     .text {

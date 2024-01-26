@@ -1,16 +1,19 @@
-import { FormEvent, useState } from "react";
-import { Block } from "../../components/block/Block";
-import { Button } from "../../components/button/Button";
-import { Input } from "../../components/input/Input";
+import { FormEvent, useState } from 'react';
+import { useRouter }           from 'next/router';
+import classNames              from 'classnames';
+
 import styles from './personalisedGrowthForm.module.scss';
-import classNames from "classnames";
-import { inter } from "../../../styles/fonts";
-import { useValidateEmail } from "../../utils/common";
-import { useRouter } from "next/router";
-import { postQuizData } from "../../utils/requests";
+
+import { Block }            from '../../components/block/Block';
+import { Button }           from '../../components/button/Button';
+import { Input }            from '../../components/input/Input';
+import { inter }            from '../../../styles/fonts';
+import { useValidateEmail } from '../../utils/common';
+import { postQuizData }     from '../../utils/requests';
 
 export const PersonalisedGrowthForm = () => {
   const [email, setEmail] = useState('');
+
   const router = useRouter();
 
   const { error, handleError } = useValidateEmail();
@@ -24,6 +27,7 @@ export const PersonalisedGrowthForm = () => {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
+
     const data = { email, selectedPlanId };
 
     try {
@@ -39,23 +43,23 @@ export const PersonalisedGrowthForm = () => {
     <div className={styles.wrapper}>
       <Block title="Enter your email to get your personalised Spiritual Growth Plan">
         <form
-          onSubmit={onSubmit}
-          className={classNames(styles.form, inter.className)}
+          onSubmit  = {onSubmit}
+          className = {classNames(styles.form, inter.className)}
         >
           <Input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onInputChange}
-            error={error}
             required
+            type     = "email"
+            name     = "email"
+            value    = {email}
+            onChange = {onInputChange}
+            error    = {error}
           />
 
           <div className={styles.button}>
             <Button
-              title="Continue"
-              type="submit"
-              disabled={!!error}
+              title    = "Continue"
+              type     = "submit"
+              disabled = {!!error}
             />
           </div>
         </form>

@@ -1,9 +1,10 @@
-import { Block } from "../../components/block/Block";
-import Image from "next/image";
-import styles from './growthProgress.module.scss';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+import styles           from './growthProgress.module.scss';
+import { Block }        from '../../components/block/Block';
+import { Button }       from '../../components/button/Button';
 import GrowthChartImage from '../../../public/images/growth.png';
-import { Button } from "../../components/button/Button";
-import { useRouter } from "next/navigation";
 
 export const GrowthProgress = () => {
   const router = useRouter();

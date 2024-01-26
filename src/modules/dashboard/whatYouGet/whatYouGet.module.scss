@@ -2,21 +2,21 @@
 @import '../../../../styles/variables.scss';
 
 .option {
-  display: flex;
-  padding: $space-md $space-xl;
+  display  : flex;
+  padding  : $space-md $space-xl;
 
   &:not(:last-child) {
     @extend %list-item;
   }
 
   .image {
-    margin-right: $space-md;
-    margin-top: $space-md / 2;
+    margin-right : $space-md;
+    margin-top   : $space-md / 2;
   }
 
   .text {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+    font-size   : 16px;
+    font-weight : $default-font-weight;
+    line-height : 24px;
   }
 }

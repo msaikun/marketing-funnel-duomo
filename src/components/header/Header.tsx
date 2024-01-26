@@ -5,7 +5,6 @@ import styles   from './header.module.scss';
 import BackIcon from '../../../public/images/back-icon.png';
 import MenuIcon from '../../../public/images/menu-icon.png';
 
-
 export const Header = () => {
   const router = useRouter();
 
@@ -13,7 +12,12 @@ export const Header = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <a className={styles.back} onClick={() => router.back()}>
-          <Image alt="Back icon" src={BackIcon} height={18} width={18} />
+          <Image
+            alt    = "Back icon"
+            src    = {BackIcon}
+            height = {16}
+            width  = {18}
+          />
         </a>
 
         <div className={styles.app} onClick={() => router.push("/")}>
