@@ -1,5 +1,6 @@
 import Head                    from 'next/head';
 import React, { ReactElement } from 'react';
+import { StartPage }           from '../src/modules/startPage/StartPage';
 
 const HelloPage = () => (
   <>
@@ -8,9 +9,7 @@ const HelloPage = () => (
       <meta content="Marketing Funnel Implementation" name="description" />
     </Head>
     <main>
-      <div>
-        Let's start!
-      </div>
+      <StartPage />
     </main>
   </>
 );

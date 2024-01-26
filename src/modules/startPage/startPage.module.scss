@@ -1,0 +1,9 @@
+@import '../../../styles/placeholders.scss';
+@import '../../../styles/variables.scss';
+
+.wrapper {
+  @extend %flex-box;
+  height    : 100vh;
+  max-width : $content-container;
+  margin    : 0 auto;
+}
