@@ -1,12 +1,12 @@
 import React, {
   ReactElement,
   ReactNode,
-}                             from 'react';
+}                        from 'react';
 import type { AppProps } from 'next/app';
 import type { NextPage } from 'next';
 
-import '../styles/global.scss';
 import { plusJakartaSans } from '../styles/fonts';
+import '../styles/global.scss';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode

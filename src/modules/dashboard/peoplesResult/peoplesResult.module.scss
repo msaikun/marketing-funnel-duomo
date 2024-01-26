@@ -12,6 +12,7 @@
 
   .percentage {
     padding-left: $space-md;
+    line-height: 40px;
     @include percentageStyle();
   }
 

@@ -8,13 +8,24 @@
 
   .progressIndicator {
     padding-left: 12px;
+    position: relative;
+
+    .progressBar {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      top: 8px;
+    }
   }
 
   .text {
     padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
   }
 }
 
 .progressBar {
-  margin: 24px 0;
+  margin: 8px 0 24px;
 }

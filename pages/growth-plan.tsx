@@ -1,29 +1,26 @@
 import React, { ReactElement } from 'react';
-import Head from 'next/head';
-
-import { Header } from '../src/components/header/Header';
+import Head                    from 'next/head';
 
 import { GrowthPlan } from '../src/modules/growthPlan/GrowthPlan';
+import { Header }     from '../src/components/header/Header';
 
-const GrowthPlanPage = () => {
-  return (
+const GrowthPlanPage = () => (
+  <>
+    <Head>
+      <title>DOUMO | Growth Plan</title>
+      <meta content="Marketing Funnel Implementation" name="description" />
+    </Head>
     <>
-      <Head>
-        <title>DOUMO | Growth Plan</title>
-        <meta content="Marketing Funnel Implementation" name="description" />
-      </Head>
-      <main>
-        <Header />
-        <GrowthPlan />
-      </main>
+      <Header />
+      <GrowthPlan />
     </>
-  );
-}
+  </>
+);
 
 GrowthPlanPage.getLayout = (page: ReactElement) => (
-  <div>
+  <>
     {page}
-  </div>
+  </>
 );
 
 export default GrowthPlanPage;

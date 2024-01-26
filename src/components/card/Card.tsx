@@ -1,6 +1,11 @@
 import { ReactNode } from 'react';
-import styles from './card.module.scss';
+import classNames    from 'classnames';
+
+import styles              from './card.module.scss';
+import { plusJakartaSans } from '../../../styles/fonts';
 
 export const Card = ({ children }: { children: ReactNode }) => (
-  <div className={styles.card}>{children}</div>
+  <div className={classNames(styles.card, plusJakartaSans.className)}>
+    {children}
+  </div>
 );

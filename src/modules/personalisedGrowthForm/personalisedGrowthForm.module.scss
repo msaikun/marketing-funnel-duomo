@@ -1,0 +1,27 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.wrapper {
+  position: relative;
+  height: calc(100vh - 105px);
+
+  .form {
+    width: 100%;
+
+    .button {
+      max-width: $content-container;
+      margin-top: $space-xl;
+      width: 100%;
+      position: absolute;
+      bottom: 24px;
+
+      @include onTablet {
+        position: static;
+      }
+
+      @media (max-height: 400px) {
+        position: static;
+      }
+    }
+  }
+}

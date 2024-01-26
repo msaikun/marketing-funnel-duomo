@@ -1,18 +1,18 @@
-@import "../../../styles/variables.scss";
+@import '../../../styles/variables.scss';
 
 .block {
-  max-width: $content-container;
-  margin: 48px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  max-width      : $content-container;
+  margin         : $space-xxl auto;
 
   .title {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    margin-bottom: 16px;
-    text-align: center;
-    color: $black-color;
+    font-size     : $space-xl;
+    font-weight   : 600;
+    line-height   : 32px;
+    margin-bottom : $space-lg;
+    text-align    : center;
+    color         : $black-color;
   }
 }

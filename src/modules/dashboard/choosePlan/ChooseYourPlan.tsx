@@ -2,20 +2,28 @@ import { Button } from "../../../components/button/Button"
 import { IRadioButtonOption, ReadioButton } from "../../../components/radioButton/RadioButton"
 import { Block } from "../../../components/block/Block"
 import { appPlansOptionsByMonth } from "../../../utils/mockData"
-import { useState } from "react"
 import { useRouter } from "next/router"
 import styles from './chooseYourPlan.module.scss';
+import classNames from "classnames"
+import { plusJakartaSans } from "../../../../styles/fonts"
 
-export const ChooseYourPlan = () => {
-  const [selectedPlan, setSelectedPlan] = useState<null | IRadioButtonOption>(null);
-
+interface IChoosePlanProps {
+  selectedPlan: null | IRadioButtonOption;
+  setSelectedPlan: (plan: IRadioButtonOption) => void
+}
+export const ChooseYourPlan = ({
+  selectedPlan,
+  setSelectedPlan
+}: IChoosePlanProps) => {
   const router = useRouter();
 
   const onGetPlanClick = () => {
     const pathname = '/growth-plan';
     const query = selectedPlan && { planId: `${selectedPlan.id}` };
-
-    router.push({ pathname, query });
+ 
+    if (query) {
+      router.push({ pathname, query });
+    }
   };
 
   const onRadioButtonChange = (option: IRadioButtonOption) => {
@@ -24,7 +32,7 @@ export const ChooseYourPlan = () => {
 
   return (
     <Block title="Choose your plan">
-      <div>
+      <div className={classNames(plusJakartaSans.className)}>
         <div>
           {appPlansOptionsByMonth.map((plan) => (
             <ReadioButton
@@ -36,7 +44,7 @@ export const ChooseYourPlan = () => {
           ))}
         </div>
         
-        <Button title="Get my plan" onClick={onGetPlanClick} />
+        <Button title="Get my plan" disabled={!selectedPlan} onClick={onGetPlanClick} />
 
         <div className={styles.description}>
           You are enrolling in a 3-monthly subscription to{' '}

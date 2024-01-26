@@ -25,13 +25,13 @@ export const GrowthPlan = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     router.push(`/form?planId=${selectedPlanId}`);
-  //   }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push(`/form?planId=${selectedPlanId}`);
+    }, 2000);
 
-  //   return () => clearInterval(timer);
-  // }, []);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <Block title="We are crafting your spiritual growth plan">
@@ -45,11 +45,13 @@ export const GrowthPlan = () => {
             <div key={id} className={styles.option}>
 
               <div className={style.progressIndicator}>
-                {progress === 100 ? (
-                  <Image alt="Checked circle icon" src={CheckedCircleIcon} width={24} />
-                ) : (
-                 <ProgressBar progress={progress} stroke="#222B38" size={18} strokeWidth={2} />
-                )}
+                <div className={styles.progressBar}>
+                  {progress === 100 ? (
+                    <Image alt="Checked circle icon" src={CheckedCircleIcon} width={24} height={24} />
+                  ) : (
+                    <ProgressBar progress={progress} stroke="#222B38" size={18} strokeWidth={2} />
+                  )}
+                </div>
               </div>
 
               <div className={style.text}>{text}</div>

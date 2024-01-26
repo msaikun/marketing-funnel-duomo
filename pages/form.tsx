@@ -1,29 +1,26 @@
 import React, { ReactElement } from 'react';
-import Head from 'next/head';
-
-import { Header } from '../src/components/header/Header';
+import Head                    from 'next/head';
 
 import { PersonalisedGrowthForm } from '../src/modules/personalisedGrowthForm/PersonalisedGrowthForm';
+import { Header }                 from '../src/components/header/Header';
 
-const PersonalisedFormPage = () => {
-  return (
-    <>
-      <Head>
-        <title>DOUMO | Form</title>
-        <meta content="Marketing Funnel Implementation" name="description" />
-      </Head>
-      <main>
-        <Header />
-        <PersonalisedGrowthForm />
-      </main>
-    </>
-  );
-}
+const PersonalisedFormPage = () => (
+  <>
+    <Head>
+      <title>DOUMO | Form</title>
+      <meta content="Marketing Funnel Implementation" name="description" />
+    </Head>
+    <main>
+      <Header />
+      <PersonalisedGrowthForm />
+    </main>
+  </>
+);
 
 PersonalisedFormPage.getLayout = (page: ReactElement) => (
-  <div>
+  <>
     {page}
-  </div>
+  </>
 );
 
 export default PersonalisedFormPage;

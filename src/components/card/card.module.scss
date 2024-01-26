@@ -1,10 +1,10 @@
 @import '../../../styles/variables.scss';
 
 .card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #00000014;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  display        : flex;
+  flex-direction : column;
+  width          : 100%;
+  border         : 1px solid #00000014;
+  border-radius  : $border-radius;
+  box-shadow     : $box-shadow;
 }

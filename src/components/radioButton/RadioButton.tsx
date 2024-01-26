@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './radiobutton.module.scss';
+import { plusJakartaSans } from '../../../styles/fonts';
 
 export interface IRadioButtonOption {
   id: number;
@@ -21,33 +22,39 @@ export const ReadioButton = ({
 }: IRadioButton) => {
   const isChecked = selectedOption?.id === value.id;
 
+  console.log('isChecked', isChecked);
   return (
-    <label className={styles.wrapper}>
+    <div className={classNames(styles.wrapper, plusJakartaSans.className)}>
       {value.isTheMostPopular && (
-        <div className={classNames(styles.mostPopularPlanLabel, { [styles.mostPopularCheckedLabel]: isChecked && selectedOption })}>
+        <div className={classNames(styles.mostPopularPlanLabel, { [styles.mostPopularCheckedPlanLabel]: isChecked })}>
           Most popular
         </div>
       )}
+      <label className={styles.inputWrapper}>
+        <div className={classNames(styles.radioButton, {
+          [styles.mostPopularPlan]: value.isTheMostPopular,
+          [styles.mostPopularCheckedPlan]: isChecked,
+        })}>
+          <input
+            name={value.title}
+            type="radio"
+            checked={isChecked}
+            value={value.id}
+            id={value.id.toString()}
+            className={classNames({ [styles.checkedInput]: isChecked })}
+            onChange={() => onChange(value)}
+          />
+          <span className={classNames(styles.control, {
+            [styles.checkedControl]: isChecked
+          })}></span>
 
-      <div className={classNames(styles.plan, {
-        [styles.mostPopularPlan]: value.isTheMostPopular,
-        [styles.mostPopularCheckedPlan]: isChecked,
-      })}>
-        <input
-          name="type"
-          type="radio"
-          checked={isChecked}
-          value={value.id}
-          onChange={() => onChange(value)}
-        />
-
-        <div className={styles.name}>{value.title}</div>
-
-        <div className={styles.details}>
-          <span className={styles.currency}>$</span>
-          <span className={styles.price}>{value.price}</span>
+          <div className={styles.name}>{value.title}</div>
+          <div className={styles.details}>
+            <span className={styles.currency}>$</span>
+            <span className={styles.price}>{value.price}</span>
+          </div>
         </div>
-      </div>
-    </label>
+      </label>
+    </div>
   );
 };

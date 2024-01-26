@@ -1,15 +1,16 @@
-@import "../../../styles/mixins.scss";
+.wrapper {
+  position: relative;
+  height: calc(100vh - 100px);
 
-.growth {
-  margin: 24px 0 54px;
-}
+  img {
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+  }
 
-.button {
-  position: absolute;
-  bottom: 24px;
-  width: 100%;
-
-  @include onTablet {
-    position: static;
+  .button {
+    max-width: 500px;
+    margin-top: 24px;
+    width: 100%;
   }
 }

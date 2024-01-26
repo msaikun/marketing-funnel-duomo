@@ -1,3 +1,6 @@
+@import './mixins.scss';
+@import './variables.scss';
+
 %flex-box {
   display: flex;
   justify-content: center;
@@ -7,4 +10,3 @@
 %list-item {
   border-bottom: 1px solid #DFE5EF;
 }
-

@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import style from './progressBar.module.scss';
+import classNames from 'classnames';
+import { lora } from '../../../styles/fonts';
 
 interface IProgressBarProps {
   stroke?: string;
@@ -49,7 +51,7 @@ export const ProgressBar = ({
             y="50%"
             dy=".3em"
             textAnchor="middle"
-            className={style.text}
+            className={classNames(style.text, lora.className)}
           >
             <tspan>{percentage}%</tspan>
           </text>

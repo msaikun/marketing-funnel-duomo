@@ -13,16 +13,14 @@ export const GrowthProgress = () => {
   };
 
   return (
-    <Block title="See your Spiritual Growth progress by Sep 17, 2024">
-      <div style={{ width: '100%' }}>
-        <div className={styles.growth}>
-          <Image alt="Growth" src={GrowthChartImage} height={354} />
-        </div>
+    <div className={styles.wrapper}>
+      <Block title="See your Spiritual Growth progress by Sep 17, 2024">
+        <Image alt="Growth" src={GrowthChartImage} />
 
         <div className={styles.button}>
           <Button title="Continue" onClick={onButtonClick} />
         </div>
-      </div>
-    </Block>
+      </Block>
+    </div>
   );
 }
